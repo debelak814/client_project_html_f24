@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue & Maize Cupboard</title>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="caps.html">CAPS</a></li>
+                <li><a href="food_pantry.html" class="current-page">Food Pantry</a></li>
+                <li><a href="tutoring.html">Tutoring</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>Blue & Maize Cupboard</h1>
+            <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        </div>
+    </header>
+    <main id="main-content">
+        <div>
+            <p>At the University of Michigan School of Information (UMSI), we are committed to supporting our students'
+                academic success by offering a wide array of resources and services, including making sure that students
+                have access to food. The Blue & Maize Cupboard is a student-run food pantry that provides free food and
+                other essentials to students in need. The pantry is located in the School of Social Work Building and is
+                open to all UMSI students. The Blue & Maize Cupboard is a great resource for students who are
+                experiencing food insecurity or who are struggling to make ends meet. If you are in need of food
+                assistance, please visit the Blue & Maize Cupboard during their regular hours of operation. You can view
+                more information about their services at the <a href="https://mbc.studentlife.umich.edu">Blue & Maize
+                    Cupboard</a> website.</p>
+
+        </div>
+
+        <div>
+            <p>Common FAQ's per the Blue & Maize Cupboards website</p>
+            <ul>
+                <li><strong>Who do they help?</strong><br>
+                    Anyone with a valid University of Michigan ID.</li>
+                <li><strong>What if I'm just a little short on food?</strong><br>
+                    Go anyway! You can even just look around to figure out if you need anything.</li>
+                <li><strong>Does going impact financial aid?</strong><br>
+                    No!</li>
+            </ul>
+        </div>
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ksqfEgX8KJg" allowfullscreen
+                title="YouTube video player showing Maize and Blue Cupboard Mission">
+            </iframe>
+        </div>
+    </main>
+    <footer>
+        <p>MSI Academic Advising | <a
+                href="https://sites.google.com/umich.edu/msiacademicadvising/student-support-resources">UMSI Academic
+                Advising </a>&copy; <span id="year"></span> University of Michigan</p>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        const headerContent = document.querySelector('.header-content');
+
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            headerContent.classList.toggle('dark-mode');
+
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
